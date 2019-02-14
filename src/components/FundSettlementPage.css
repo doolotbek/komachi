@@ -1,0 +1,41 @@
+.container {
+    width: '100vw';
+    height: auto;
+    left: 1rem;
+    right: 1rem;
+    display: table-row;
+    }
+    .tile {
+        margin-top: 87px;
+        margin-left: 4.8%;
+        font-size: 20px;
+        margin-bottom: 2.8125rem;
+    }
+.text{
+    height: auto; 
+    margin-right: 4.8%;
+    margin-left: 4.8%;
+    justify-content: center; 
+    width: 90%;
+}
+
+.buttonContainer{
+    display: inline-block; 
+    width: 95vw; 
+    margin-top:4rem; 
+    margin-bottom: 4rem;
+    margin-left: 4.8%;
+    margin-right: 4.8%;
+    justify-content: center;
+
+    
+}
+
+.button{
+    display: block;
+    background-color: white; 
+    color: black;
+    width:  90%;
+    height: 50px;
+    font-size: 20px;
+}
