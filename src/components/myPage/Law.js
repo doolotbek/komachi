@@ -4,20 +4,41 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import "./Law.css"
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+    text: {
+        fontSize: '16px',
+        height: 'auto',
+        left: '1rem',
+        right: '1rem',
+        width: '100%',
+        marginTop: '38px',
+    },
+    button: {
+        textAlign: 'center',
+        height: '56px',
+        fontSize: '24px'
+    }
+};
+
+
 
 class Low extends Component {
+
+
     render() {
+        const { classes } = this.props;
         return (
-            <div>
-                <List>
-                    <ListItem button >
-                        <i class="fa fa-chevron-left" style={{ color: "#A2A3A3", position: "absolute", left: "5%", button: "5%" }}></i>
-                        <ListItemText className="support" spyle={{ fontSize: "24" }} >特定商取引法に基づく表示</ListItemText>
-                    </ListItem>
-                    <Divider />
-                </List>
-                <div className="container">
+
+            <List>
+                <ListItem className={classes.button} button >
+                    <i class="fa fa-chevron-left" style={{ fontSize: "12px", color: "#A2A3A3",  left: "100%",  }}></i>
+                    <ListItemText  >特定商取引法に基づく表示</ListItemText>
+                </ListItem>
+                <Divider />
+
+                <div className={classes.text}>
                     <p>
                         サイト名<br />
                         東京小町
@@ -57,13 +78,13 @@ class Low extends Component {
                         返金について<br />
                         ライブストリーミング配信の提供というコンテンツの都合上、購入されたポイントについては
                             一切返金できませんので予めご了承下さい。
-    
+
                 </p>
                 </div>
 
-            </div>
+            </List>
 
         );
     }
 }
-export default Low;
+export default withStyles(styles)(Low);

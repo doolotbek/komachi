@@ -4,18 +4,35 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import "./TermsOf.css"
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+    text: {
+        fontSize: '16px',
+        height: 'auto',
+        left: '1rem',
+        right: '1rem',
+        width: '100%',
+        marginTop: '38px',
+    },
+    button: {
+        textAlign: 'center',
+        height: '56px'
+    }
+};
+
 class TermsOf extends Component {
 
     render() {
+        const { classes } = this.props;
         return (
             <List>
-                <ListItem button >
+                <ListItem className={classes.button} button >
                     <i class="fa fa-chevron-left" style={{ color: "#A2A3A3", position: "absolute", left: "5%", button: "5%" }}></i>
-                    <ListItemText className="support" spyle={{ fontSize: "24" }} >サポート</ListItemText>
+                    <ListItemText >サポート</ListItemText>
                 </ListItem>
                 <Divider />
-                <div className="btn" style = {{ position:"auto", right: "1rem" }}>
+                <div className={classes.text}>
 
                     <p >
                         東京小町 会員規約<br />
@@ -389,4 +406,4 @@ class TermsOf extends Component {
         );
     }
 }
-export default withRouter(TermsOf);
+export default withStyles(styles)(TermsOf);

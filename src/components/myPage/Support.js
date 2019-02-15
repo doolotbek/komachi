@@ -4,13 +4,21 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import CardHeader from '@material-ui/core/CardHeader';
+import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
+import NextIcon from '@material-ui/icons/ArrowForwardIosSharp';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from "react-router-dom";
-import "./Support.css";
+import { Typography } from "@material-ui/core";
+import { myData } from './myData';
 
 const styles = {
     container: {
         fontSize: '25px',
+        width: '100%',
+        
+    },
+    listContainer: {
+        height: '4rem'
     },
     icon: {
         marginRight: '100%',
@@ -22,54 +30,34 @@ const styles = {
 class Support extends Component {
 
     render() {
+        console.log("props", this.props);
+        const { classes } = this.props;
         return (
-            <List  >
-                
-                <ListItem button >
-                <i  class="fa fa-chevron-left" style = {{color:"#A2A3A3", position: "absolute", left:"5%", button: "5%"}}></i>
-                    <ListItemText className="support" spyle = {{fontSize: "24"}} >サポート</ListItemText>
-                </ListItem>
+            <div className={classes.container} >
+
+                <CardHeader
+                    avatar={<BackIcon onClick={()=> this.props.history.goBack()}/>}
+                    title={<Typography className="support"  >サポート</Typography>}
+                />
 
                 <Divider />
+                <List  >
+                    {myData.map((item, index) => {
+                        return (
+                            <ListItem button 
+                            divider 
+                            onClick={()=> this.props.history.push(item.link)}
+                            className={classes.listContainer}>
+                               
+                                    <ListItemText className='contact' >{item.name}</ListItemText>
+                                    <NextIcon />
+                                
+                            </ListItem>
+                        )
+                    })}
 
-                <ListItem button divider>
-                    <div className="container">
-                        <ListItemText className="contact" >お問い合わせ
-                        <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                        </ListItemText>
-
-                    </div>
-                </ListItem>
-                <Link to="/TermsOf">
-                <ListItem button >
-                    <ListItemText className="termsOf"  >利用規約</ListItemText>
-                    <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                </ListItem>
-                </Link>
-                <Divider light />
-                <Link to="/Law">
-                <ListItem button>
-                    <ListItemText className="law" >特定商取引法に基づく表示</ListItemText>
-                    <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                </ListItem>
-                </Link>
-                <Divider light />
-                <ListItem button>
-                    <ListItemText className="fund-settlemen" >資金決済法に基づく表示</ListItemText>
-                    <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                </ListItem>
-                <Divider light />
-                <ListItem button>
-                    <ListItemText className="privacypolicy" >プライバシーポリシー</ListItemText>
-                    <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                </ListItem>
-                <Divider light />
-                <ListItem button>
-                    <ListItemText className="company" >運営会社</ListItemText>
-                    <i class="fa fa-chevron-right" style={{ color: "#A2A3A3", position: "absolute", right: "5%", button: "5%" }}></i>
-                </ListItem>
-                <Divider light />
-            </List>
+                </List>
+            </div>
 
         );
     }
