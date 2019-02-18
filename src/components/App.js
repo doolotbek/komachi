@@ -13,6 +13,7 @@ import Contact from "./myPage/Contact";
 import Company from "./myPage/Company";
 import FundSettlement from "./myPage/FundSettlement";
 import MainPage from './myPage/MainPage';
+import FAQ from './FAQ';
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
                     <Route exact path="/FundSettlement" render={() => <FundSettlement />} />
                     <Route exact path="/Contact" render={() => <Contact />} />
                     <Route exact path="/Company" render={() => <Company />} />
+                    <Route exact path="/FAQ" render={() => <FAQ />} />
                 </Switch>
             </div>
         );

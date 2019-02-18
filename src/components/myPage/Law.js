@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
+import CardHeader from '@material-ui/core/CardHeader';
+import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
 
 const styles = {
     text: {
         fontSize: '16px',
         height: 'auto',
-        left: '1rem',
-        right: '1rem',
         width: '100%',
         marginTop: '38px',
     },
@@ -19,24 +18,32 @@ const styles = {
         textAlign: 'center',
         height: '56px',
         fontSize: '24px'
+    },
+    conteiner: {
+        marginLeft:'1rem',
+        marginRight:'1rem'
     }
 };
 
 
 
-class Low extends Component {
+class Law extends Component {
 
 
     render() {
         const { classes } = this.props;
         return (
-
-            <List>
-                <ListItem className={classes.button} button >
-                    <i class="fa fa-chevron-left" style={{ fontSize: "12px", color: "#A2A3A3",  left: "100%",  }}></i>
-                    <ListItemText  >特定商取引法に基づく表示</ListItemText>
-                </ListItem>
-                <Divider />
+            
+            <div className={classes.conteiner}>
+                 <ListItem className={classes.button} button >
+                    <CardHeader
+                    avatar={<BackIcon style={{fontSize: "24px"}} onClick={()=> this.props.history.goBack()}/>}
+                />
+                        <ListItemText >特定商取引法に基づく表示</ListItemText>
+                        
+                        <Divider />  
+                    </ListItem>
+                
 
                 <div className={classes.text}>
                     <p>
@@ -82,9 +89,9 @@ class Low extends Component {
                 </p>
                 </div>
 
-            </List>
+            </div>
 
         );
     }
 }
-export default withStyles(styles)(Low);
+export default withStyles(styles)(withRouter(Law));

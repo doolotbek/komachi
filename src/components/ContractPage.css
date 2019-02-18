@@ -27,7 +27,6 @@
     margin-left: 4.8%;
     margin-right: 4.8%;
     justify-content: center;
-
     
 }
 
@@ -39,41 +38,4 @@
     height: 50px;
     font-size: 20px;
 }
- /* .container {
-width: '100vw';
-height: auto;
-display: table-row;
-}
-.text{
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    width: 95%;
-}
-.tile {
-    margin-top: 87px;
-    margin-left: 18px;
-    font-size: 20px;
-}
-
-.buttonContainer{
-    display: inline-block;
-    width: 100vw;
-    margin-top:4rem; 
-    margin-bottom: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-
-    
-}
-
-.back{
-    display: block;
-    background-color: white; 
-    color: black;
-    width:  95vw;
-    height: 50px;
-    font-size: 20px;
-} */
+ 

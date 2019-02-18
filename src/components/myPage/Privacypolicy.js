@@ -3,15 +3,15 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-
+import { withRouter } from "react-router";
+import CardHeader from '@material-ui/core/CardHeader';
+import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
 
 const styles = {
     text: {
         fontSize: '16px',
         height: 'auto',
-        left: '1rem',
-        right: '1rem',
+        
         width: '100%',
         marginTop: '38px',
     },
@@ -19,6 +19,14 @@ const styles = {
         textAlign: 'center',
         height: '56px',
         fontSize: '24px'
+    },
+    conteiner: {
+        marginLeft:'1rem',
+        marginRight:'1rem'
+    },
+     icon: {
+        marginRight: '100%',
+
     }
 };
 
@@ -27,11 +35,13 @@ class Privacypolicy extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <List >
+            <div className={classes.conteiner}>
                 
                 
                 <ListItem className={classes.button} button >
-                    <i class="fa fa-chevron-left" style={{fontSize: "12px", color: "#A2A3A3",  left: "100%", }}></i>
+                <CardHeader
+                    avatar={<BackIcon style={{fontSize: "24px"}} onClick={()=> this.props.history.goBack()}/>}
+                />
                     <ListItemText >プライバシーポリシー</ListItemText>
                     <Divider />
                 </ListItem>
@@ -94,8 +104,8 @@ class Privacypolicy extends Component {
                         も強化し改善に努めてまいります。
                 </p>
                 </div>
-            </List>
+            </div>
         );
     }
 }
-export default withStyles(styles)(Privacypolicy);
+export default withStyles(styles)(withRouter(Privacypolicy));

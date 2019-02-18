@@ -5,19 +5,25 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
+import CardHeader from '@material-ui/core/CardHeader';
+import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
 
 const styles = {
     text: {
         fontSize: '16px',
         height: 'auto',
-        left: '1rem',
-        right: '1rem',
         width: '100%',
         marginTop: '38px',
     },
     button: {
         textAlign: 'center',
-        height: '56px'
+        height: '56px',
+        fontSize: '24px',
+        
+    },
+    conteiner: {
+        marginRight: '1rem',
+        marginLeft:'1rem'
     }
 };
 
@@ -26,12 +32,17 @@ class TermsOf extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <List>
-                <ListItem className={classes.button} button >
-                    <i class="fa fa-chevron-left" style={{ color: "#A2A3A3", position: "absolute", left: "5%", button: "5%" }}></i>
-                    <ListItemText >サポート</ListItemText>
+            <div className={classes.conteiner}>
+
+                <ListItem className={classes.button}  button >
+                <CardHeader
+                    avatar={<BackIcon style={{fontSize: "24px"}} onClick={()=> this.props.history.goBack()}/>}
+                />        
+                 <ListItemText >利用規約</ListItemText>
+                 
+                 <Divider />
                 </ListItem>
-                <Divider />
+                
                 <div className={classes.text}>
 
                     <p >
@@ -401,9 +412,9 @@ class TermsOf extends Component {
 
                     </p>
                 </div>
-            </List>
+            </div>
 
         );
     }
 }
-export default withStyles(styles)(TermsOf);
+export default withStyles(styles)(withRouter(TermsOf));

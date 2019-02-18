@@ -37,7 +37,7 @@ class Support extends Component {
 
                 <CardHeader
                     avatar={<BackIcon onClick={()=> this.props.history.goBack()}/>}
-                    title={<Typography className="support"  >サポート</Typography>}
+                    title={<Typography className="support" style = {{textAlign:"center", fontSize:"24px"}}>サポート</Typography>}
                 />
 
                 <Divider />
