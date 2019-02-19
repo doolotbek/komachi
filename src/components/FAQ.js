@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 // import { withRouter } from "react-router";
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
 import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
@@ -20,7 +18,7 @@ const styles = {
         
     },
     text: {
-        fontSize: '11px',
+        fontSize: '10px',
         marginBottom: '27px'
     },
     button: {
@@ -47,13 +45,14 @@ class FAQ extends Component {
 
 
                
-                <ListItem className={classes.button} button >
+             
                 <CardHeader
-                    avatar={<BackIcon onClick={()=> this.props.history.goBack()}/>}
-                />
-                    <ListItemText style={{ fontSize: "24px" }}>FAQ</ListItemText>
+                    avatar={<img alt='icon' style = {{height: "14px"}} src='/images/arrowLeft.svg' onClick={()=> this.props.history.goBack()}/>}
+                    title={<Typography align='center' style = {{fontSize: "18px",fontWeight:'150'}}>FAQ</Typography>}
+               />
+                    
                     <Divider />
-                </ListItem>
+                
                 <div className={classes.texts}>
                     <p>東京小町について</p>
 

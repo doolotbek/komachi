@@ -12,8 +12,8 @@ import Privacypolicy from "./myPage/Privacypolicy";
 import Contact from "./myPage/Contact";
 import Company from "./myPage/Company";
 import FundSettlement from "./myPage/FundSettlement";
-import MainPage from './myPage/MainPage';
 import FAQ from './FAQ';
+import Timeline from "./timline/Timeline"
 
 
 class App extends Component {
@@ -21,8 +21,8 @@ class App extends Component {
         return (
             <div >
                 <Switch>
-                    <Route exact path="/" render={() => <MainPage />} />
-                    <Route exact path="/ContractPage" render={() => <ContractPage />} />
+                    {/* <Route exact path="/" render={() => <MainPage />} /> */}
+                    <Route exact path="/" render={() => <ContractPage />} />
                     <Route exact path="/LawPage" render={() => <LawPage />} />
                     <Route exact path="/FundSettlementPage" render={() => <FundSettlementPage />} />
                     <Route exact path="/PrivacyPolicyPage" render={() => <PrivacyPolicyPage />} />
@@ -34,6 +34,7 @@ class App extends Component {
                     <Route exact path="/Contact" render={() => <Contact />} />
                     <Route exact path="/Company" render={() => <Company />} />
                     <Route exact path="/FAQ" render={() => <FAQ />} />
+                    <Route exact path="/Timeline" render={() => <Timeline />} />
                 </Switch>
             </div>
         );

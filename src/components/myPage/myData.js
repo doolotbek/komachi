@@ -1,7 +1,7 @@
 export const myData = [
     {
         name: 'お問い合わせ',
-        link: 'Contact'
+        link: 'Contact',
     },
     {
         name: '利用規約',

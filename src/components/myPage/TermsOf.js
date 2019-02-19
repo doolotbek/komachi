@@ -1,29 +1,26 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
-import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
+import { Typography } from "@material-ui/core";
 
 const styles = {
     text: {
-        fontSize: '16px',
+        fontSize: '14px',
         height: 'auto',
-        width: '100%',
+        width: '90%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         marginTop: '38px',
     },
     button: {
         textAlign: 'center',
         height: '56px',
         fontSize: '24px',
-        
     },
-    conteiner: {
-        marginRight: '1rem',
-        marginLeft:'1rem'
+    container: {
+        height: '18px'
     }
 };
 
@@ -32,17 +29,17 @@ class TermsOf extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.conteiner}>
+            <div >
 
-                <ListItem className={classes.button}  button >
                 <CardHeader
-                    avatar={<BackIcon style={{fontSize: "24px"}} onClick={()=> this.props.history.goBack()}/>}
-                />        
-                 <ListItemText >利用規約</ListItemText>
-                 
-                 <Divider />
-                </ListItem>
-                
+                    className={classes.container}
+                    avatar={<img alt='icon' style={{ height: "14px", }} src='/images/arrowLeft.svg' onClick={() => this.props.history.goBack()} />}
+                    title={<Typography align='center' style={{ fontSize: "18px", marginRight: '1rem' }}>利用規約</Typography>}
+                />
+
+
+                <Divider />
+
                 <div className={classes.text}>
 
                     <p >

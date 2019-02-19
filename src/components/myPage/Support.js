@@ -5,8 +5,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import CardHeader from '@material-ui/core/CardHeader';
-import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
-import NextIcon from '@material-ui/icons/ArrowForwardIosSharp';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
 import { myData } from './myData';
@@ -18,12 +16,12 @@ const styles = {
         
     },
     listContainer: {
-        height: '4rem'
+        height: '3.6rem',
     },
-    icon: {
-        marginRight: '100%',
-
-    }
+    btn:{
+        height: '18px',
+    },
+   
 };
 
 
@@ -36,8 +34,9 @@ class Support extends Component {
             <div className={classes.container} >
 
                 <CardHeader
-                    avatar={<BackIcon onClick={()=> this.props.history.goBack()}/>}
-                    title={<Typography className="support" style = {{textAlign:"center", fontSize:"24px"}}>サポート</Typography>}
+                className={classes.btn} 
+                    avatar={<img alt='icon' style = {{height: "14px"}} src='/images/arrowLeft.svg' onClick={()=> this.props.history.goBack()}/>}
+                    title={<Typography className="support" style = {{textAlign:"center",marginRight: '1rem', fontSize:"18px"}}>サポート</Typography>}
                 />
 
                 <Divider />
@@ -50,7 +49,7 @@ class Support extends Component {
                             className={classes.listContainer}>
                                
                                     <ListItemText className='contact' >{item.name}</ListItemText>
-                                    <NextIcon />
+                                    <img alt='icon' style = {{height: "14px"}} src='/images/arrowRight.svg' />
                                 
                             </ListItem>
                         )

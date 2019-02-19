@@ -1,27 +1,26 @@
 import React, { Component } from "react";
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import { withRouter } from "react-router";
 import CardHeader from '@material-ui/core/CardHeader';
-import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
+import { Typography } from "@material-ui/core";
 
 const styles = {
     text: {
-        fontSize: '16px',
+        fontSize: '14px',
         height: 'auto',
-        width: '100%',
+        width: '90%',
         marginTop: '38px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     button: {
         textAlign: 'center',
         height: '56px',
         fontSize: '24px'
     },
-    conteiner: {
-        marginLeft:'1rem',
-        marginRight:'1rem'
+    container: {
+        height: '18px'
     }
 };
 
@@ -31,21 +30,19 @@ class FundSettlement extends Component {
         const { classes } = this.props;
         return (
 
-            <div className={classes.conteiner}> 
+            <div > 
                 
-           
-                    <ListItem className={classes.button} button >
+                    
                     <CardHeader
-                    avatar={<BackIcon style={{fontSize: "24px"}} onClick={()=> this.props.history.goBack()}/>}
-                />
-                        <ListItemText >資金決済法に基づく表示</ListItemText>
-                        
+                    className={classes.container}
+                    avatar={<img alt='icon' style = {{height: "14px"}} src='/images/arrowLeft.svg' onClick={()=> this.props.history.goBack()}/>}
+                    title={<Typography align='center' style = {{fontSize: "18px",marginRight: '1rem'}}>資金決済法に基づく表示</Typography>}
+               />
                         <Divider />  
-                    </ListItem>
+                   
                    
                     <div className={classes.text}>
-                        <p>
-                            サービス名】<br />
+                            <p>【サービス名】<br />
                             東京小町
                 </p>
                         <p>
