@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
-import BackIcon from '@material-ui/icons/ArrowBackIosSharp';
 import { Typography } from "@material-ui/core";
 
 
@@ -27,9 +26,8 @@ const styles = {
         height: '56px',
         
     },
-        conteiner:{
-            marginLeft:'1rem',
-            marginRight: '1rem'
+        container:{
+            haight: '18px',
         }
 };
 
@@ -41,14 +39,14 @@ class FAQ extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.conteiner}>
+            <div className={classes.container}>
 
 
                
              
                 <CardHeader
                     avatar={<img alt='icon' style = {{height: "14px"}} src='/images/arrowLeft.svg' onClick={()=> this.props.history.goBack()}/>}
-                    title={<Typography align='center' style = {{fontSize: "18px",fontWeight:'150'}}>FAQ</Typography>}
+                    title={<Typography align='center' style = {{marginRight: '1rem',fontSize: "18px",fontWeight:'150'}}>FAQ</Typography>}
                />
                     
                     <Divider />

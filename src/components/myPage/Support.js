@@ -40,7 +40,7 @@ class Support extends Component {
                 />
 
                 <Divider />
-                <List  >
+                <List  style = {{marginTop:"0%"}}>
                     {myData.map((item, index) => {
                         return (
                             <ListItem button 
@@ -54,7 +54,6 @@ class Support extends Component {
                             </ListItem>
                         )
                     })}
-
                 </List>
             </div>
 
