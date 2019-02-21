@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import { Typography } from "@material-ui/core";
 
 
-const styles = {
+const styles = theme => ({
     text: {
         fontSize: '14px',
         height: 'auto',
@@ -22,7 +22,7 @@ const styles = {
     container: {
         height: '18px'
     }
-};
+});
 
 
 

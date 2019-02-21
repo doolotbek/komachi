@@ -67,9 +67,12 @@ class Timeline extends Component {
                             <img alt='icon' style={{height: "40px" }} src='/images/user_image.svg'
                                 className={classes.avatar} />
                         }
+                        
                         title="星野愛理"
-                        subheader="1時間前"
-                    />
+                        subheader="1時間前">
+                        </CardHeader>
+
+                    
                     <GridList style={{marginTop: "-2%"}} >
                         <GridListTile style={{
                             height: "352px", width: "95%",marginTop: "3px",
@@ -123,7 +126,7 @@ class Timeline extends Component {
 
                     <CardContent>
 
-                        <Typography style={{ fontSize: "12px", width: "90%", marginLeft: "5%" }} component="p">
+                        <Typography style={{ fontSize: "12px", width: "98%", marginLeft: "1%" }} component="p">
                             iOS用のApple UIデザインリソースには、Sketch、Photoshop、Adobe XDの各テンプレート、
                             およびiOS SDKを使用して開発者が利用できるあらゆる
                                 <p style={{ color: '#A5A5A5' }}>…もっと見る</p>
